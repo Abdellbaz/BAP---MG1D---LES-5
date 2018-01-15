@@ -26,3 +26,4 @@
 
     // GEBRUIKER TERUG STUREN NAAR DE INDEX-PAGINA
     header("Location: index.php");
+?>
