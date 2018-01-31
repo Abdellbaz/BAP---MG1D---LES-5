@@ -11,7 +11,7 @@ Abdelaziz Elbaze: MAILEN VANAF MA-CLOUD
 http://24916.hosts.ma-cloud.nl/bewijzenmap/periode1.1/bap/Opdracht5/mail.php
 
 # BAP---MG1D---LES-6
-Abdelaziz Elbaze: MYSQL DATABASE
+Abdelaziz Elbaze: MYSQL DATABASE                            
 http://24916.hosts.ma-cloud.nl/bewijzenmap/periode1.1/bap/Opdracht6/index.php
 
 # BAP---MG1D---LES-7/8 Nieuwsbrief 
