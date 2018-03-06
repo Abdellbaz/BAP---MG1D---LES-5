@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Abdelaziz Elbaze
+		</title>
+		<meta charset="UTF-8">
+		<meta content="Abdelaziz Web" name="description">
+		<meta content="HTML,CSS,XML,JavaScript" name="keywords">
+		<meta content="Abdelaziz Elbaze" name="author">
+		<style>
+		#s1,#score{display:inline;}
+    </style>
+  <body>
+
+<section id="wrapper">
+<section id="head">Rekenen</section>
+	<section id="s1">Score </section><section id="score"></section>
+  <section id="mijnvraag">mijnvraag</section>
+  <input type="text" id="antwoord" autofocus onkeypress="keyPressed(event)">
+<div id="check">check</div>
+</section>
+
+
+  </body>
+  <script type="text/javascript">
+    const wrapper = document.getElementById('wrapper');
+    const mijnvraag = document.getElementById('mijnvraag');
+    const antwoord = document.getElementById('antwoord');
+    const check = document.getElementById('check');
+		const score = document.getElementById('score');
+
+  function display() {
+    var a = Math.floor(Math.random()*9+1);
+    var b = Math.floor(Math.random()*9+1);
+		vraag = a*b;
+    mijnvraag.innerHTML = a + " x " +b+" = ?";
+    antwoord.focus();
+  }
+
+	function keyPressed(event) {
+			   var key = event.which || event.keyCode;
+	    if ((key == 13)&&(antwoord.value != "")) {
+				if (vraag== antwoord.value)
+				{ check.innerHTML="Goed";  p=p+10;}
+	      else {check.innerHTML="Fout";(p>=5) ? p=p-5: p=0;}
+				score.innerHTML =p;
+	    window.setTimeout(wait,2000);
+	    }
+	  }
+
+    function wait() {
+      check.innerHTML="";
+      antwoord.value ="";
+      display();
+
+    }
+p=0;
+wait();
+
+    </script>
+</html>
