@@ -15,7 +15,7 @@ Abdelaziz Elbaze: MYSQL DATABASE
 http://24916.hosts.ma-cloud.nl/bewijzenmap/periode1.1/bap/Opdracht6/index.php
 
 # BAP---MG1D---LES-7/8 Nieuwsbrief 
-Abdelaziz Elbaze: Nieuwsbrief webapp deel 1 inschrijven
+Abdelaziz Elbaze: Nieuwsbrief webapp deel 1 inschrijven      
 Abdelaziz Elbaze: Nieuwsbrief webapp deel 2 uitschrijven
 http://24916.hosts.ma-cloud.nl/bewijzenmap/periode1.1/bap/Nieuwsbrief/index.php
 
