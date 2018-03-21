@@ -1,11 +1,11 @@
 aantal =0;
-totaal = 0;
+samen = 0;
 process.argv.splice(0, 2);
 
-for (let i of process.argv) {
-totaal += Number(i);
+for (let i in process.argv) {
+samen += Number(i);
 aantal++;
 }
 console.log("\naantal "+aantal);
-console.log("totaal "+totaal);
-console.log("gemiddelde "+totaal/aantal);
+console.log("samen "+samen);
+console.log("gemiddelde "+samen/aantal);
