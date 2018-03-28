@@ -7,110 +7,123 @@
 	<meta content="HTML,CSS,XML,JavaScript" name="keywords">
 	<meta content="Abdelaziz Elbaze" name="author">
 	<style>
-	          #s1,#score{display:inline;}
-	          #l1,#lvl{display:inline;}
-	          @font-face {font-family:'chalk';src: url('chalk.ttf') format('truetype');}
-	          #check{height: 200px;width: 200px; }
-	          #wrapper{text-align: center;
-	              margin: auto;
-	              background-color: white;
-	           border: 2px solid black;
-	           border-radius: 55px;
-	           height:330px ; width:300px ;
-	      padding: 40px;
-	      font-size: 20px;}
-	      #head{font-size: 40px}
-	      #mijnvraag{font-size: 30px}
-	   #validator{text-align:center;}
-    
+#s1,#score{display:inline;}
+#l1,#lvl{display:inline;}
+@font-face {font-family:'chalk';src: url('chalk.ttf') format('truetype');}
+#check{height: 200px;width: 200px; }
+#wrapper{
+	text-align:center;
+	margin:0em auto;
+	background-color: white;
+	border: 2px solid black;
+	border-radius: 55px;
+	height:330px ; width:300px ;
+	padding: 40px;
+	font-size: 20px;}
+#head{font-size: 40px}
+#mijnvraag{font-size: 30px}
+#validator{text-align:center;margin:20px auto;}
+th, td,tr {
+	padding: 0.2em;
+	font-size: 1.2em;
+	color: white;
+	border: 2px solid black;
+	text-align: center;}
+table{border: 2px solid black; margin: auto;}
+th{background-color: yellow; color: black; }
+#scroll{
+	margin: -25em 70em ;
+	height: 25em;
+	width: 25em;
+	overflow-y:scroll;}
+
+#antwoord{-webkit-appearance: none;margin: 0;-moz-appearance: textfield;}
 	</style>
 </head>
 <body>
 	<div id="wrapper">
-	<div id="head">
-		Rekenen
-	</div><br>
-	<div id="l1">
-		LVL
-	</div>
+	<div id="head">Rekenen</div><br>
+	<div id="l1">LVL</div>
 	<div id="lvl"></div>
-	<div id="s1">
-		Score
-	</div>
+	<div id="s1">Score</div>
 	<div id="score"></div><br>
-	<div id="mijnvraag">
-		mijnvraag
-	</div><input autofocus="" id="antwoord" onkeypress="keyPressed(event)" type="text"> <img alt="plaatje werkt niet" id="check" src="non.png"></div><br>
+	<div id="mijnvraag">mijnvraag</div>
+	<input autofocus="" id="antwoord" onkeypress="keyPressed(event)" type="number">
+	<img alt="plaatje werkt niet" id="check" src="non.png"><br>
 	<div id="validator">
 		<a href="https://validator.w3.org/nu/?useragent=Validator.nu%2FLV+http%3A%2F%2Fvalidator.w3.org%2Fservices&acceptlanguage=&doc=http%3A%2F%2F24916.hosts.ma-cloud.nl%2Fbewijzenmap%2Fperiode1.1%2Fsct%2FRekenSpel%2Freken.html" target="_blank"><img alt="Valide HTML5" src="http://blog.boyet.com/blog/files/media/image/valid-html5-blue.png"></a> <a href="https://jigsaw.w3.org/css-validator/validator?uri=http%3A%2F%2F24916.hosts.ma-cloud.nl%2Fbewijzenmap%2Fperiode1.1%2Fsct%2FRekenSpel%2Freken.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en" target="_blank"><img alt="Valide CSS" src="http://jigsaw.w3.org/css-validator/images/vcss-blue.gif"></a>
-	</div>
+	</div></div>
+	<div id="scroll" ><table id="result"><tr><th> Vraag </th><th> Antwoord </th><th> Beantwoord </th></tr></table></div>
+
 	<script>
-	      const wrapper = document.getElementById('wrapper');
-	      const mijnvraag = document.getElementById('mijnvraag');
-	      const antwoord = document.getElementById('antwoord');
-	      const check = document.getElementById('check');
-	          const score = document.getElementById('score');
-	          const lvl = document.getElementById('lvl');
-
-	    function display() {
-	      var a = Math.floor(Math.random()*9+1);
-	      var b = Math.floor(Math.random()*num+1);
-	          vraag = a*b;
-	      mijnvraag.innerHTML = a + " x " +b+" = ?";
-	          mijnvraag.style.fontFamily = 'chalk';
-	          antwoord.style.fontFamily = 'chalk';
-	      antwoord.focus();
-	    }
-
-	      function keyPressed(event) {
-	                 var key = event.which || event.keyCode;
-	          if ((key == 13)&&(antwoord.value != "")) {
-	                  if (vraag== antwoord.value)
-	                  { check.src="goed.png"; sound.src ='win.mp3'; p=p+10;}
-	                          else { check.src="fout.png"; sound.src ='lose.mp3';(p>=5) ? p=p-5: p=0;}
-                          antwoord.blur();
-	                  sound.play();
-	                  gameLvl();
-	                  score.innerHTML =p;
-	                  lvl.innerHTML =l;
-	          window.setTimeout(wait,2000);
-	          }
-	        }
-	          function gameLvl() {if (p>=100) {l=l+1;p=0;}else {}switch (l) {
-	              case 1: num =3; break;
-	              case 2: num =4; break;
-	              case 3: num =5; break;
-	              case 4: num =6; break;
-	              case 5: num =7; break;
-	              case 6: num =8; break;
-	              case 7: num =9; break;
-	              default:break;
-
-	          }}
-	          function randomNummer(num) {
-	          return Math.floor(Math.random() * num);  }
-
-	          function background() {
-	           var col =  "rgb("
-	           + randomNummer(255) + ","
-	           + randomNummer(255) + ","
-	           + randomNummer(255) + ")";
-	               document.body.style.backgroundColor = col;}
+const wrapper = document.getElementById('wrapper');
+const mijnvraag = document.getElementById('mijnvraag');
+const antwoord = document.getElementById('antwoord');
+const check = document.getElementById('check');
+const score = document.getElementById('score');
+const lvl = document.getElementById('lvl');
+const result = document.getElementById('result');
 
 
 
-	      function wait() {
-	        check.src="non.png";
-	        antwoord.value ="";
-	        display();
-	      }
-	   setInterval(background, 777);
-	   sound = new Audio();
-	   num =2;
-	   l=0;
-	   p=0;
-	   wait();
+function display() {
+	a = Math.floor(Math.random()*9+1);
+	b = Math.floor(Math.random()*num+1);
+	vraag = a*b;
+	mijnvraag.innerHTML = a + " x " +b+" = ?";
+	mijnvraag.style.fontFamily = 'chalk';
+	antwoord.style.fontFamily = 'chalk';
+	antwoord.focus();}
 
+function keyPressed(event) {
+	var key = event.which || event.keyCode;
+	if ((key == 13)&&(antwoord.value != "")) {
+		if (vraag== antwoord.value)
+		 {check.src="goed.png"; sound.src ='win.mp3'; p=p+10;}
+		 else { check.src="fout.png"; sound.src ='lose.mp3';(p>=5) ? p=p-5: p=0;}
+		 pushArray();
+		 resultaatbord();
+		 antwoord.blur();
+	   sound.play();
+	   gameLvl();
+	   score.innerHTML =p;
+	   lvl.innerHTML =l;
+		 window.setTimeout(wait,2000);}}
+
+function gameLvl() {if (p>=100) {l=l+1;p=0;}else {}switch (l) {
+	case 1: num =3; break;
+	case 2: num =4; break;
+	case 3: num =5; break;
+	case 4: num =6; break;
+	case 5: num =7; break;
+	case 6: num =8; break;
+	case 7: num =9; break;
+	default:break;}}
+
+function randomNummer(num) {return Math.floor(Math.random() * num);}
+function background() {var col =  "rgb("+ randomNummer(255) + ","+ randomNummer(255) + ","+ randomNummer(255) + ")";mijnvraag.style.color = col;}
+
+function pushArray() {full.push("");full.push(" "+a + " x " +b);full.push(" "+vraag);full.push(" "+antwoord.value);full.push("");}
+
+function resultaatbord() {let  text = "";k=0;
+for (let i in full) {
+	if (vraag== antwoord.value){
+		switch(k) {
+case 0:k=1;text = "<tr bgcolor='Green' >"; break;
+case 1:k=2;text += "<td>"+full[i]+"</td>"; break;
+case 2: k=3;text += "<td>"+full[i]+"</td>"; break;
+case 3: k=4;text += "<td>"+full[i]+"</td>"; break;
+case 4:k=0;text += "</tr>"; break;}}else {
+	switch(k) {
+case 0:k=1;text = "<tr bgcolor='Red'>"; break;
+case 1:k=2;text += "<td>"+full[i]+"</td>"; break;
+case 2: k=3;text += "<td>"+full[i]+"</td>"; break;
+case 3: k=4;text += "<td>"+full[i]+"</td>"; break;
+case 4:k=0;text += "</tr>"; break;}}} result.innerHTML += text;}
+
+function wait() {check.src="non.png";antwoord.value ="";display();}
+
+setInterval(background, 777);sound = new Audio();full=[];num =2;l=0;p=0;wait();
 
 	</script>
 </body>
