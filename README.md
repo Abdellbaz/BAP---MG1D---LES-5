@@ -28,5 +28,5 @@ Abdelaziz Elbaze: PHP form4_err => includes + debuggen
 http://24916.hosts.ma-cloud.nl/bewijzenmap/periode1.1/bap/form4_err/index.php
 
 # SCT---GD1B---RekenSpel                                   
-Abdelaziz Elbaze: RekenSpel 2.0     
+Abdelaziz Elbaze: RekenSpel       
 http://24916.hosts.ma-cloud.nl/bewijzenmap/periode1.1/sct/RekenSpel/reken.html
