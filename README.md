@@ -27,6 +27,12 @@ http://24916.hosts.ma-cloud.nl/bewijzenmap/periode1.1/bap/StringHandler/stringha
 Abdelaziz Elbaze: PHP form4_err => includes + debuggen       
 http://24916.hosts.ma-cloud.nl/bewijzenmap/periode1.1/bap/form4_err/index.php
 
+# BAP---GD1B---AJAX 1      
+Abdelaziz Elbaze: AJAX 1 introductie + opdracht 'gethint'  
+http://24916.hosts.ma-cloud.nl/bewijzenmap/periode1.1/bap/ajax/ajax.html    
+
 # SCT---GD1B---RekenSpel                                   
 Abdelaziz Elbaze: RekenSpel       
-http://24916.hosts.ma-cloud.nl/bewijzenmap/periode1.1/sct/RekenSpel/reken.html
+http://24916.hosts.ma-cloud.nl/bewijzenmap/periode1.1/sct/RekenSpel/reken.html  
+
+
