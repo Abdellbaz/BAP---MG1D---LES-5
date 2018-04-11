@@ -42,6 +42,7 @@ th{background-color: yellow; color: black; }
 </head>
 <body>
 	<div id="wrapper">
+	<button id="start">Start</button>
 	<div id="head">Rekenen</div><br>
 	<div id="l1">LVL</div>
 	<div id="lvl"></div>
@@ -63,6 +64,7 @@ const check = document.getElementById('check');
 const score = document.getElementById('score');
 const lvl = document.getElementById('lvl');
 const result = document.getElementById('result');
+const start = document.getElementById('start');
 
 
 
@@ -91,40 +93,34 @@ function keyPressed(event) {
 		 window.setTimeout(wait,2000);}}
 
 function gameLvl() {if (p>=100) {l=l+1;p=0;}else {}switch (l) {
-	case 1: num =3; break;
-	case 2: num =4; break;
-	case 3: num =5; break;
-	case 4: num =6; break;
-	case 5: num =7; break;
-	case 6: num =8; break;
-	case 7: num =9; break;
-	default:break;}}
+	case 1: num =3; break;case 2: num =4; break;case 3: num =5; break;
+	case 4: num =6; break;case 5: num =7; break;
+	case 6: num =8; break;case 7: num =9; break;default:break;}}
 
 function randomNummer(num) {return Math.floor(Math.random() * num);}
 function background() {var col =  "rgb("+ randomNummer(255) + ","+ randomNummer(255) + ","+ randomNummer(255) + ")";mijnvraag.style.color = col;}
 
-function pushArray() {full.push("");full.push(" "+a + " x " +b);full.push(" "+vraag);full.push(" "+antwoord.value);full.push("");}
+function pushArray() {full.push(" "+a + " x " +b);full.push(" "+vraag);full.push(" "+antwoord.value);}
 
 function resultaatbord() {let  text = "";k=0;
 for (let i in full) {
-	if (vraag== antwoord.value){
-		switch(k) {
-case 0:k=1;text = "<tr bgcolor='Green' >"; break;
+if (vraag== antwoord.value){
+switch(k) {
+case 0:k=1;text = "<tr bgcolor='Green'><td>"+full[i]+"</td>"; break;
 case 1:k=2;text += "<td>"+full[i]+"</td>"; break;
-case 2: k=3;text += "<td>"+full[i]+"</td>"; break;
-case 3: k=4;text += "<td>"+full[i]+"</td>"; break;
-case 4:k=0;text += "</tr>"; break;}}else {
-	switch(k) {
-case 0:k=1;text = "<tr bgcolor='Red'>"; break;
+case 2:k=0;text += "<td>"+full[i]+"</td></tr>"; break;}}
+else {
+switch(k) {
+case 0:k=1;text = "<tr bgcolor='Red'><td>"+full[i]+"</td>"; break;
 case 1:k=2;text += "<td>"+full[i]+"</td>"; break;
-case 2: k=3;text += "<td>"+full[i]+"</td>"; break;
-case 3: k=4;text += "<td>"+full[i]+"</td>"; break;
-case 4:k=0;text += "</tr>"; break;}}} result.innerHTML += text;}
+case 2:k=0;text += "<td>"+full[i]+"</td></tr>"; break;}}} result.innerHTML += text;}
 
 function wait() {check.src="non.png";antwoord.value ="";display();}
 
-setInterval(background, 777);sound = new Audio();full=[];num =2;l=0;p=0;wait();
+setInterval(background, 777);
+function run() {sound = new Audio();full=[];num =2;l=0;p=0;result.innerHTML = "<tr><th> Vraag </th><th> Antwoord </th><th> Beantwoord </th></tr>";start.innerHTML = "Reset";wait();}
 
+start.addEventListener('click',()=>{run();})
 	</script>
 </body>
 </html>
