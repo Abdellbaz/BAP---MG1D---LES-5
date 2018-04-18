@@ -37,6 +37,6 @@ http://24916.hosts.ma-cloud.nl/bewijzenmap/periode1.1/sct/RekenSpel/reken.html
 
 # SCT---GD1B---Quiz                                      
 Abdelaziz Elbaze: Quiz JSON + Ecmascript 6   
-http://24916.hosts.ma-cloud.nl/bewijzenmap/periode1.1/sct/RekenSpel/reken.html     
+http://24916.hosts.ma-cloud.nl/bewijzenmap/periode1.1/sct/quiz-master/index.html       
 
 
