@@ -43,3 +43,9 @@ http://24916.hosts.ma-cloud.nl/bewijzenmap/periode1.1/sct/quiz-master/index.html
 Abdelaziz Elbaze: AJAX 2 BMI calculator AJAX / PHP       
 http://24916.hosts.ma-cloud.nl/bewijzenmap/periode1.1/bap/bmi/BMI.html  
 
+# BAP---GD1B---PokerSpel                                          
+Abdelaziz Elbaze: PokerSpel 1       
+http://24916.hosts.ma-cloud.nl/bewijzenmap/periode1.1/bap/Pokerspel/pokerSpel.php        
+Abdelaziz Elbaze: PokerSpel 2       
+http://24916.hosts.ma-cloud.nl/bewijzenmap/periode1.1/bap/Pokerspel/pokerSpel2.php     
+
