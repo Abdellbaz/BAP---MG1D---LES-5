@@ -19,7 +19,7 @@
 
 <?php
 $q = intval($_GET['q']);
-$dbc = mysqli_connect('localhost','24916','elbaze2','24916_db') or die('werkt niet dabase niet in orden');
+$dbc = mysqli_connect('localhost','24916','','24916_db') or die('werkt niet dabase niet in orden');
 
 
 $qeury ="SELECT * FROM user WHERE id = '".$q."'";
