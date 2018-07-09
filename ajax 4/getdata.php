@@ -3,37 +3,21 @@ $resultArray=array();
 $search = strval($_GET['search']);
 $type = strval($_GET['type']);
 
-$dbc = mysqli_connect('localhost','24916','','24916_db') or die('werkt niet dabase niet in orden');
+$dbc = mysqli_connect('localhost','24916','elbaze2','24916_db') or die('werkt niet dabase niet in orden');
 $qeury="SELECT * FROM country WHERE Name LIKE '$search%'";
 $result = mysqli_query($dbc,$qeury) or die('werkt niet (SELECT)query niet in orden');
 
 if ($type=='list'){
     while($row = mysqli_fetch_array($result)) {$resultArray[]=$row['Name'];}
-    echo json_encode($resultArray);
-    /*foreach ($resultArray as $i){
-          echo $i.'<br>';
-      }*/}
+    echo json_encode($resultArray);}
 
 else  if ($type=='answer'){
-    $qeury="SELECT * FROM country WHERE Name LIKE '$search'";
-    $result = mysqli_query($dbc,$qeury) or die('werkt niet (SELECT)query niet in orden');
     while($row = mysqli_fetch_array($result)) {
-        echo  '<h1 onclick="showList(code.innerHTML,\'info\')" > ' . $row['Name'] . "</h1>
-        <p id='code'><strong>Code               :   </strong>" . $row['Code'] . "</p>
-        <p><strong>Name               :   </strong>" . $row['Name'] . "</p>
-        <p><strong>Continent          :   </strong>" . $row['Continent'] . "</p>
-        <p><strong>Region             :   </strong>" . $row['Region'] . "</p>
-        <p><strong>SurfaceArea        :   </strong>" . $row['SurfaceArea'] . "</p>
-        <p><strong>IndepYear          :   </strong>" . $row['IndepYear'] . "</p>
-        <p><strong>Population         :   </strong>" . $row['Population'] . "</p>
-        <p><strong>LifeExpectancy     :   </strong>" . $row['LifeExpectancy'] . "</p>
-        <p><strong>GNP                :   </strong>" . $row['GNP'] . "</p>
-        <p><strong>GNPOld             :   </strong>" . $row['GNPOld'] . "<</p>
-        <p><strong>LocalName          :   </strong>" . $row['LocalName'] . "</p>
-        <p><strong>GovernmentForm     :   </strong>" . $row['GovernmentForm'] . "</p>
-        <p><strong>HeadOfState        :   </strong>" . $row['HeadOfState'] . "</p>
-        <p><strong>Capital            :   </strong>" . $row['Capital'] . "</p>
-        <p ><strong>Code2              :   </strong>" . $row['Code2'] . "</p>";}}
+        foreach ($resultArray as $x){
+            array_push($resultArray,$x);}
+        array_push($resultArray,$row['Name'],$row['Code'],$row['Name'], $row['Continent'],$row['Region'],$row['SurfaceArea'],$row['IndepYear'],
+            $row['Population'],$row['LifeExpectancy'],$row['GNP'],$row['GNPOld'],$row['LocalName'],$row['GovernmentForm'],$row['HeadOfState'],$row['Capital'], $row['Code2']);}
+    echo json_encode($resultArray);}
 
 
 else if ($type=='info') {
